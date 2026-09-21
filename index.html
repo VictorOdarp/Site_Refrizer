@@ -8,7 +8,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="shortcut icon" href="imagens/logo.webp" type="image/x-icon">
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
   tailwind.config = {
@@ -36,7 +35,10 @@
     padding-top: env(safe-area-inset-top, 0px);
     padding-bottom: env(safe-area-inset-bottom, 0px);
   }
-  html{scroll-behavior:smooth; scroll-padding-top: calc(164px + env(safe-area-inset-top, 0px));}
+  html{scroll-behavior:smooth; scroll-padding-top: calc(92px + env(safe-area-inset-top, 0px));}
+  @media (min-width: 768px){
+    html{scroll-padding-top: calc(164px + env(safe-area-inset-top, 0px));}
+  }
   body{margin:0; font-family:'Work Sans', sans-serif; color:var(--ink); background:#fff; overflow-x:hidden;}
   h1,h2,h3,.font-display{font-family:'Space Grotesk', sans-serif;}
   .navbar{top: env(safe-area-inset-top, 0px);}
@@ -89,10 +91,10 @@
 
 <!-- NAVBAR -->
 <header id="nav" class="navbar fixed left-0 right-0 z-50 transition-colors duration-300" style="top:0;">
-  <div id="navInner" class="max-w-7xl mx-auto flex items-center justify-between px-5 md:px-8 h-[152px] transition-all duration-300">
+  <div id="navInner" class="max-w-7xl mx-auto flex items-center justify-between px-5 md:px-8 h-[72px] md:h-[152px] transition-all duration-300">
     <a href="#inicio" class="flex items-center gap-2.5 shrink-0">
       <!-- ===== TODO-IMG: logo da Refrizer (versão para fundo escuro/transparente) ===== -->
-      <img src="imagens/logo.webp" alt="Refrizer Climatização e Refrigeração" class="h-32 w-auto">
+      <img src="imagens/logo.webp" alt="Refrizer Climatização e Refrigeração" class="h-11 md:h-32 w-auto">
     </a>
 
     <nav class="hidden lg:flex items-center gap-8 text-[15px] font-medium">
@@ -106,9 +108,9 @@
     <div class="flex items-center gap-3">
       <a href="https://wa.me/5542988281258?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Refrizer%20e%20queria%20um%20or%C3%A7amento."
          target="_blank" rel="noopener"
-         class="hidden sm:inline-flex items-center gap-2 bg-ice hover:bg-ice-400 text-white font-semibold text-[14px] px-5 py-2.5 rounded-full transition-colors">
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.8 14.1c-.24.68-1.4 1.3-1.94 1.38-.5.08-1.12.11-1.81-.12-.42-.13-.95-.31-1.64-.6-2.88-1.24-4.76-4.14-4.9-4.33-.14-.19-1.17-1.56-1.17-2.97 0-1.41.74-2.1 1-2.39.26-.28.57-.35.76-.35.19 0 .38 0 .55.01.17.01.42-.07.65.5.24.58.82 2 .89 2.15.07.15.12.32.02.51-.09.19-.14.31-.28.48-.14.17-.3.37-.42.5-.14.14-.29.3-.13.58.17.28.74 1.22 1.58 1.98 1.09.97 2 1.28 2.29 1.42.29.14.46.12.63-.07.17-.19.72-.84.91-1.13.19-.29.38-.24.63-.14.26.09 1.65.78 1.93.92.28.14.47.21.53.33.07.12.07.66-.17 1.34z"/></svg>
-        Falar no WhatsApp
+         class="inline-flex items-center gap-1.5 sm:gap-2 bg-ice hover:bg-ice-400 text-white font-semibold text-[12px] sm:text-[14px] px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-full transition-colors">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" class="sm:w-[17px] sm:h-[17px]"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.8 14.1c-.24.68-1.4 1.3-1.94 1.38-.5.08-1.12.11-1.81-.12-.42-.13-.95-.31-1.64-.6-2.88-1.24-4.76-4.14-4.9-4.33-.14-.19-1.17-1.56-1.17-2.97 0-1.41.74-2.1 1-2.39.26-.28.57-.35.76-.35.19 0 .38 0 .55.01.17.01.42-.07.65.5.24.58.82 2 .89 2.15.07.15.12.32.02.51-.09.19-.14.31-.28.48-.14.17-.3.37-.42.5-.14.14-.29.3-.13.58.17.28.74 1.22 1.58 1.98 1.09.97 2 1.28 2.29 1.42.29.14.46.12.63-.07.17-.19.72-.84.91-1.13.19-.29.38-.24.63-.14.26.09 1.65.78 1.93.92.28.14.47.21.53.33.07.12.07.66-.17 1.34z"/></svg>
+        <span>Pedir orçamento</span>
       </a>
       <button id="menuBtn" class="lg:hidden text-white p-2" aria-label="Abrir menu" aria-expanded="false">
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
@@ -134,7 +136,7 @@
 
 <!-- HERO -->
 <section id="inicio" class="relative bg-navy" style="background: radial-gradient(1100px 620px at 82% -10%, #0F3352 0%, #0B2A45 45%, #071B30 100%);">
-  <div class="max-w-7xl mx-auto px-5 md:px-8 pt-[196px] pb-20 md:pb-28 grid lg:grid-cols-[1.05fr_0.95fr] gap-14 items-center">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 pt-[104px] md:pt-[196px] pb-20 md:pb-28 grid lg:grid-cols-[1.05fr_0.95fr] gap-14 items-center">
     <div>
       <span class="rise-1 inline-flex items-center gap-2 bg-white/8 border border-white/15 rounded-full px-4 py-1.5 text-[13px] text-white/90 mb-7">
         <span>Manutenção Preventiva para Empresas e Residências · Guarapuava e Região</span>
@@ -171,7 +173,7 @@
     </div>
 
    <div class="rise-3 relative">
-      <img src="imagens/head.webp" alt="descrição" class="rounded-xl aspect-[4/3] w-full object-cover">
+      <img src="imagens/head.webp" alt="descrição" class="block rounded-xl aspect-[4/3] w-full object-cover">
       <div class="absolute -bottom-6 -left-6 hidden sm:block bg-white rounded-xl shadow-xl px-5 py-4 max-w-[220px]">
         <p class="font-display font-bold text-navy text-[15px] leading-snug">Atendimento residencial, comercial e industrial</p>
       </div>
