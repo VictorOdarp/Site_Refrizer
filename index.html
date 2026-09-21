@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Refrizer Climatização e Refrigeração | Guarapuava - PR</title>
+<meta name="description" content="Manutenção e instalação de ar-condicionado, geladeiras, freezers e máquinas de lavar em Guarapuava e região. Atendimento para casas, comércios e indústrias.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          navy: { DEFAULT: '#0B2A45', deep: '#071B30', 800: '#0F3352' },
+          ice: { DEFAULT: '#1FA9DD', 400: '#4FC0E8', 100: '#EAF6FC' },
+          frost: '#7C93A8',
+          ink: '#0E1F2E'
+        },
+        fontFamily: {
+          display: ['"Space Grotesk"', 'sans-serif'],
+          body: ['"Work Sans"', 'sans-serif']
+        }
+      }
+    }
+  }
+</script>
+<style>
+  :root{
+    --navy:#0B2A45; --navy-deep:#071B30; --ice:#1FA9DD; --ice-light:#EAF6FC;
+    --ink:#0E1F2E; --frost:#7C93A8;
+    box-sizing:border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  html{scroll-behavior:smooth; scroll-padding-top: calc(164px + env(safe-area-inset-top, 0px));}
+  body{margin:0; font-family:'Work Sans', sans-serif; color:var(--ink); background:#fff; overflow-x:hidden;}
+  h1,h2,h3,.font-display{font-family:'Space Grotesk', sans-serif;}
+  .navbar{top: env(safe-area-inset-top, 0px);}
+
+  /* frost divider */
+  .frost-edge{ display:block; width:100%; height:56px; }
+  .frost-edge-flip{ transform: scaleY(-1); }
+
+  /* whatsapp pulse */
+  @keyframes pulseRing {
+    0%{ box-shadow: 0 0 0 0 rgba(31,169,221,0.45); }
+    100%{ box-shadow: 0 0 0 18px rgba(31,169,221,0); }
+  }
+  .pulse{ animation: pulseRing 2.2s cubic-bezier(0.4,0,0.6,1) infinite; }
+  @media (prefers-reduced-motion: reduce){ .pulse{ animation:none; } }
+
+  /* hero entrance, single orchestrated moment */
+  @keyframes riseIn { from{opacity:0; transform:translateY(14px);} to{opacity:1; transform:translateY(0);} }
+  .rise-1{ animation: riseIn .7s ease-out .05s both; }
+  .rise-2{ animation: riseIn .7s ease-out .18s both; }
+  .rise-3{ animation: riseIn .7s ease-out .30s both; }
+  .rise-4{ animation: riseIn .7s ease-out .42s both; }
+  @media (prefers-reduced-motion: reduce){ .rise-1,.rise-2,.rise-3,.rise-4{ animation:none; } }
+
+  .img-placeholder{
+    border:1.5px dashed rgba(11,42,69,0.35);
+    background: repeating-linear-gradient(135deg, rgba(11,42,69,0.035) 0 10px, rgba(11,42,69,0.06) 10px 20px);
+    display:flex; align-items:center; justify-content:center; text-align:center;
+    color: var(--navy); font-size:13px; line-height:1.4; padding:16px;
+  }
+  .img-placeholder.on-dark{
+    border-color: rgba(255,255,255,0.3);
+    background: repeating-linear-gradient(135deg, rgba(255,255,255,0.04) 0 10px, rgba(255,255,255,0.08) 10px 20px);
+    color:#EAF6FC;
+  }
+
+  .nav-link{ position:relative; }
+  .nav-link::after{
+    content:''; position:absolute; left:0; bottom:-4px; width:0; height:2px; background:var(--ice);
+    transition:width .2s ease;
+  }
+  .nav-link:hover::after{ width:100%; }
+
+  .icon-tile svg{ width:22px; height:22px; }
+
+  ::selection{ background:#1FA9DD; color:#fff; }
+</style>
+</head>
+<body class="font-body">
+
+<!-- NAVBAR -->
+<header id="nav" class="navbar fixed left-0 right-0 z-50 transition-colors duration-300" style="top:0;">
+  <div id="navInner" class="max-w-7xl mx-auto flex items-center justify-between px-5 md:px-8 h-[152px] transition-all duration-300">
+    <a href="#inicio" class="flex items-center gap-2.5 shrink-0">
+      <!-- ===== TODO-IMG: logo da Refrizer (versão para fundo escuro/transparente) ===== -->
+      <img src="imagens/logo.webp" alt="Refrizer Climatização e Refrigeração" class="h-32 w-auto">
+    </a>
+
+    <nav class="hidden lg:flex items-center gap-8 text-[15px] font-medium">
+      <a href="#inicio" id="navA1" class="nav-link text-white/90 hover:text-white transition-colors">Início</a>
+      <a href="#servicos" id="navA2" class="nav-link text-white/90 hover:text-white transition-colors">Serviços</a>
+      <a href="#diferenciais" id="navA3" class="nav-link text-white/90 hover:text-white transition-colors">Diferenciais</a>
+      <a href="#avaliacoes" id="navA4" class="nav-link text-white/90 hover:text-white transition-colors">Avaliações</a>
+      <a href="#contato" id="navA5" class="nav-link text-white/90 hover:text-white transition-colors">Contato</a>
+    </nav>
+
+    <div class="flex items-center gap-3">
+      <a href="https://wa.me/5542988281258?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Refrizer%20e%20queria%20um%20or%C3%A7amento."
+         target="_blank" rel="noopener"
+         class="hidden sm:inline-flex items-center gap-2 bg-ice hover:bg-ice-400 text-white font-semibold text-[14px] px-5 py-2.5 rounded-full transition-colors">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.8 14.1c-.24.68-1.4 1.3-1.94 1.38-.5.08-1.12.11-1.81-.12-.42-.13-.95-.31-1.64-.6-2.88-1.24-4.76-4.14-4.9-4.33-.14-.19-1.17-1.56-1.17-2.97 0-1.41.74-2.1 1-2.39.26-.28.57-.35.76-.35.19 0 .38 0 .55.01.17.01.42-.07.65.5.24.58.82 2 .89 2.15.07.15.12.32.02.51-.09.19-.14.31-.28.48-.14.17-.3.37-.42.5-.14.14-.29.3-.13.58.17.28.74 1.22 1.58 1.98 1.09.97 2 1.28 2.29 1.42.29.14.46.12.63-.07.17-.19.72-.84.91-1.13.19-.29.38-.24.63-.14.26.09 1.65.78 1.93.92.28.14.47.21.53.33.07.12.07.66-.17 1.34z"/></svg>
+        Falar no WhatsApp
+      </a>
+      <button id="menuBtn" class="lg:hidden text-white p-2" aria-label="Abrir menu" aria-expanded="false">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- mobile menu -->
+  <div id="mobileMenu" class="lg:hidden hidden bg-navy-deep border-t border-white/10">
+    <nav class="flex flex-col px-6 py-4 gap-4 text-[15px] font-medium text-white/90">
+      <a href="#inicio" class="mobile-link">Início</a>
+      <a href="#servicos" class="mobile-link">Serviços</a>
+      <a href="#diferenciais" class="mobile-link">Diferenciais</a>
+      <a href="#avaliacoes" class="mobile-link">Avaliações</a>
+      <a href="#contato" class="mobile-link">Contato</a>
+      <a href="https://wa.me/5542988281258?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Refrizer%20e%20queria%20um%20or%C3%A7amento." target="_blank" rel="noopener"
+         class="inline-flex items-center justify-center gap-2 bg-ice text-white font-semibold text-[14px] px-5 py-3 rounded-full mt-1">
+        Falar no WhatsApp
+      </a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="inicio" class="relative bg-navy" style="background: radial-gradient(1100px 620px at 82% -10%, #0F3352 0%, #0B2A45 45%, #071B30 100%);">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 pt-[196px] pb-20 md:pb-28 grid lg:grid-cols-[1.05fr_0.95fr] gap-14 items-center">
+    <div>
+      <span class="rise-1 inline-flex items-center gap-2 bg-white/8 border border-white/15 rounded-full px-4 py-1.5 text-[13px] text-white/90 mb-7">
+        <span>Manutenção Preventiva para Empresas e Residências · Guarapuava e Região</span>
+      </span>
+
+      <h1 class="rise-2 font-display font-bold text-white leading-[1.08] text-[36px] sm:text-[44px] lg:text-[50px] tracking-tight">
+        Guarapuava esfria de manhã e esquenta à tarde. Seus equipamentos sentem isso todo dia.
+      </h1>
+
+      <p class="rise-3 mt-6 text-[17px] md:text-[18px] text-[#C7D9E6] leading-relaxed max-w-xl">
+        Cuidamos da climatização e da refrigeração de casas, comércios e indústrias da região: instalação e manutenção de ar-condicionado, geladeiras, freezers e máquinas de lavar, com uma equipe que atende rápido e resolve de verdade.
+      </p>
+
+      <div class="rise-4 mt-9 flex flex-col sm:flex-row gap-3.5">
+        <a href="https://wa.me/5542988281258?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Refrizer%20e%20queria%20um%20or%C3%A7amento."
+           target="_blank" rel="noopener"
+           class="inline-flex items-center justify-center gap-2 bg-ice hover:bg-ice-400 text-white font-semibold text-[15px] px-7 py-4 rounded-full transition-all hover:scale-[1.02]">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.8 14.1c-.24.68-1.4 1.3-1.94 1.38-.5.08-1.12.11-1.81-.12-.42-.13-.95-.31-1.64-.6-2.88-1.24-4.76-4.14-4.9-4.33-.14-.19-1.17-1.56-1.17-2.97 0-1.41.74-2.1 1-2.39.26-.28.57-.35.76-.35.19 0 .38 0 .55.01.17.01.42-.07.65.5.24.58.82 2 .89 2.15.07.15.12.32.02.51-.09.19-.14.31-.28.48-.14.17-.3.37-.42.5-.14.14-.29.3-.13.58.17.28.74 1.22 1.58 1.98 1.09.97 2 1.28 2.29 1.42.29.14.46.12.63-.07.17-.19.72-.84.91-1.13.19-.29.38-.24.63-.14.26.09 1.65.78 1.93.92.28.14.47.21.53.33.07.12.07.66-.17 1.34z"/></svg>
+          Pedir orçamento no WhatsApp
+        </a>
+        <a href="#servicos"
+           class="inline-flex items-center justify-center gap-2 border border-white/25 hover:border-white/50 text-white font-semibold text-[15px] px-7 py-4 rounded-full transition-colors">
+          Ver nossos serviços
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+
+      <a href="https://www.google.com/search?q=refrizer+guarapuava&oq=refrizer+&gs_lcrp=EgZjaHJvbWUqBggAECMYJzIGCAAQIxgnMgYIARBFGDkyCAgCEEUYJxg7MgYIAxBFGDsyBwgEEAAYgAQyBggFEEUYPDIGCAYQRRg9MgYIBxBFGDzSAQgxNTE0ajBqN6gCALACAA&sourceid=chrome&source=chrome.ob&ie=UTF-8"
+         target="_blank" rel="noopener"
+         class="rise-4 mt-6 inline-flex items-center gap-1.5 text-[13px] text-[#7C93A8] hover:text-ice-400 transition-colors">
+        <svg width="13" height="13" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.6 6.1.6-4.6 4.1 1.3 6-5.4-3.1-5.4 3.1 1.3-6-4.6-4.1 6.1-.6z"/></svg>
+        5,0 no Google · Refrizer Climatização e Refrigeração
+      </a>
+    </div>
+
+   <div class="rise-3 relative">
+      <img src="imagens/head.webp" alt="descrição" class="rounded-xl aspect-[4/3] w-full object-cover">
+      <div class="absolute -bottom-6 -left-6 hidden sm:block bg-white rounded-xl shadow-xl px-5 py-4 max-w-[220px]">
+        <p class="font-display font-bold text-navy text-[15px] leading-snug">Atendimento residencial, comercial e industrial</p>
+      </div>
+    </div>
+  </div>
+
+  <svg class="frost-edge" viewBox="0 0 1440 56" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,26 C180,48 360,4 540,26 C720,48 900,4 1080,26 C1260,48 1350,10 1440,26 L1440,56 L0,56 Z" fill="#ffffff"/>
+  </svg>
+</section>
+
+<!-- STATS BAR -->
+<section class="bg-white border-b border-navy/10">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-8 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 text-center">
+    <div>
+      <p class="font-display font-bold text-navy text-[22px]">5,0 ★</p>
+      <p class="text-[13px] text-frost mt-1">Avaliação no Google</p>
+    </div>
+    <div>
+      <p class="font-display font-bold text-navy text-[22px]">+1456</p>
+      <p class="text-[13px] text-frost mt-1">Casas, comércios e indústrias atendidos</p>
+    </div>
+    <div>
+      <p class="font-display font-bold text-navy text-[22px]">+8 anos</p>
+      <p class="text-[13px] text-frost mt-1">Experiência de atendimento</p>
+    </div>
+    <div>
+      <p class="font-display font-bold text-navy text-[22px]">Guarapuava</p>
+      <p class="text-[13px] text-frost mt-1">Santa Cruz e região metropolitana</p>
+    </div>
+  </div>
+</section>
+
+<!-- ROTEAMENTO -->
+<section class="bg-ice-100">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-24">
+    <div class="max-w-2xl">
+      <h2 class="font-display font-bold text-navy text-[30px] md:text-[36px] leading-tight">O que está te trazendo até aqui hoje?</h2>
+      <p class="mt-4 text-[16px] text-ink/70 leading-relaxed">Atendemos dois tipos de urgência muito diferentes: a geladeira que parou na sua casa e o ar-condicionado que não pode parar na sua empresa. Escolha o seu caso.</p>
+    </div>
+
+    <div class="mt-12 grid md:grid-cols-2 gap-6">
+      <div class="bg-navy rounded-2xl p-8 md:p-10 flex flex-col">
+        <div class="icon-tile w-11 h-11 rounded-lg bg-white/10 flex items-center justify-center mb-6 text-ice-400">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 11l9-7 9 7" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 10v10h14V10" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 20v-6h6v6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 class="font-display font-bold text-white text-[22px]">Para a sua casa</h3>
+        <p class="mt-3 text-[15px] text-[#C7D9E6] leading-relaxed">Ar-condicionado que não gela, geladeira barulhenta, freezer que não segura o frio, máquina de lavar que não centrifuga direito. A gente vai até você e resolve.</p>
+        <ul class="mt-6 space-y-3 text-[14px] text-white/90">
+          <li class="flex items-start gap-2.5">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="mt-0.5 shrink-0 text-ice-400"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.6"/><path d="M8 12.5l2.5 2.5L16 9.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Diagnóstico técnico antes de trocar qualquer peça
+          </li>
+          <li class="flex items-start gap-2.5">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="mt-0.5 shrink-0 text-ice-400"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.6"/><path d="M8 12.5l2.5 2.5L16 9.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Instalação de ar-condicionado com garantia de serviço
+          </li>
+          <li class="flex items-start gap-2.5">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="mt-0.5 shrink-0 text-ice-400"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.6"/><path d="M8 12.5l2.5 2.5L16 9.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Atendimento rápido, sem enrolação
+          </li>
+        </ul>
+        <a href="https://wa.me/5542988281258?text=Ol%C3%A1%21%20Preciso%20de%20ajuda%20com%20um%20equipamento%20na%20minha%20casa."
+           target="_blank" rel="noopener"
+           class="mt-8 inline-flex items-center justify-center gap-2 bg-ice hover:bg-ice-400 text-white font-semibold text-[14px] px-6 py-3.5 rounded-full transition-colors w-full sm:w-auto">
+          Pedir orçamento residencial
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+
+      <div class="bg-white rounded-2xl p-8 md:p-10 flex flex-col border border-navy/10">
+        <div class="icon-tile w-11 h-11 rounded-lg bg-ice-100 flex items-center justify-center mb-6 text-ice">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M8 7h.01M12 7h.01M16 7h.01M8 11h.01M12 11h.01M16 11h.01M8 15h.01M12 15h.01M16 15h.01" stroke-linecap="round"/></svg>
+        </div>
+        <h3 class="font-display font-bold text-navy text-[22px]">Para comércios e indústrias</h3>
+        <p class="mt-3 text-[15px] text-ink/70 leading-relaxed">Ambientes climatizados que não podem esfriar fora de hora e câmaras que não podem descongelar. Manutenção programada para você não descobrir o problema na pior hora.</p>
+        <ul class="mt-6 space-y-3 text-[14px] text-ink/85">
+          <li class="flex items-start gap-2.5">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="mt-0.5 shrink-0 text-ice"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.6"/><path d="M8 12.5l2.5 2.5L16 9.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Visitas técnicas especializadas e recorrentes
+          </li>
+          <li class="flex items-start gap-2.5">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="mt-0.5 shrink-0 text-ice"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.6"/><path d="M8 12.5l2.5 2.5L16 9.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Higienização profunda de sistemas de climatização
+          </li>
+          <li class="flex items-start gap-2.5">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="mt-0.5 shrink-0 text-ice"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.6"/><path d="M8 12.5l2.5 2.5L16 9.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Atendimento combinado para não interromper a operação
+          </li>
+        </ul>
+        <a href="https://wa.me/5542988281258?text=Ol%C3%A1%21%20Quero%20falar%20sobre%20manuten%C3%A7%C3%A3o%20preventiva%20para%20minha%20empresa."
+           target="_blank" rel="noopener"
+           class="mt-8 inline-flex items-center justify-center gap-2 bg-navy hover:bg-navy-800 text-white font-semibold text-[14px] px-6 py-3.5 rounded-full transition-colors w-full sm:w-auto">
+          Falar sobre contrato de manutenção
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AUTORIDADE / DIFERENCIAIS -->
+<section id="diferenciais" class="bg-white">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-24 grid lg:grid-cols-[0.95fr_1.05fr] gap-14 items-start">
+    <div class="lg:sticky lg:top-28">
+      <h2 class="font-display font-bold text-navy text-[30px] md:text-[36px] leading-tight">Equipamento parado custa mais do que equipamento cuidado.</h2>
+      <p class="mt-5 text-[16px] text-ink/70 leading-relaxed">
+        Todo mundo só liga para o ar-condicionado ou para a geladeira quando eles já pararam de funcionar. Nessa hora, o conserto costuma ser mais caro, mais demorado e às vezes nem é mais conserto, é troca. A manutenção feita antes evita boa parte disso.
+      </p>
+       <img src="imagens/beneficios.webp" alt="Técnico da Refrizer fazendo manutenção em ar-condicionado" class="mt-8 rounded-xl aspect-[4/3] w-full object-cover">
+    </div>
+
+    <div class="grid sm:grid-cols-2 gap-5">
+      <div class="bg-ice-100 rounded-xl p-6">
+        <div class="icon-tile w-10 h-10 rounded-lg bg-white flex items-center justify-center mb-4 text-ice">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21c-4.5-2.5-7-6-7-10a7 7 0 0 1 14 0c0 4-2.5 7.5-7 10z"/><circle cx="12" cy="10.5" r="2.3"/></svg>
+        </div>
+        <h3 class="font-display font-bold text-navy text-[17px]">Equipe técnica qualificada</h3>
+        <p class="mt-2 text-[14px] text-ink/70 leading-relaxed">Quem mexe no seu equipamento entende do assunto e explica o que encontrou, sem termo técnico jogado pra confundir.</p>
+      </div>
+
+      <div class="bg-ice-100 rounded-xl p-6">
+        <div class="icon-tile w-10 h-10 rounded-lg bg-white flex items-center justify-center mb-4 text-ice">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 class="font-display font-bold text-navy text-[17px]">Atendimento ágil</h3>
+        <p class="mt-2 text-[14px] text-ink/70 leading-relaxed">Resposta rápida pelo WhatsApp e visita marcada sem enrolação, do primeiro contato até o serviço concluído.</p>
+      </div>
+
+      <div class="bg-ice-100 rounded-xl p-6">
+        <div class="icon-tile w-10 h-10 rounded-lg bg-white flex items-center justify-center mb-4 text-ice">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3c2 3 6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 4-8 6-11z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 class="font-display font-bold text-navy text-[17px]">Higienização profunda</h3>
+        <p class="mt-2 text-[14px] text-ink/70 leading-relaxed">Removemos a sujeira e o fungo que se acumulam por dentro do equipamento, não só o pó que dá para ver por fora.</p>
+      </div>
+
+      <div class="bg-ice-100 rounded-xl p-6">
+        <div class="icon-tile w-10 h-10 rounded-lg bg-white flex items-center justify-center mb-4 text-ice">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3" stroke-linecap="round"/></svg>
+        </div>
+        <h3 class="font-display font-bold text-navy text-[17px]">Visita técnica especializada</h3>
+        <p class="mt-2 text-[14px] text-ink/70 leading-relaxed">Diagnóstico correto antes de qualquer troca de peça, para você gastar só com o que realmente precisa.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVIÇOS -->
+<section id="servicos" class="bg-navy relative" style="background: radial-gradient(900px 500px at 15% 100%, #0F3352 0%, #0B2A45 55%, #071B30 100%);">
+  <svg class="frost-edge frost-edge-flip absolute top-0 left-0 right-0" viewBox="0 0 1440 56" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,26 C180,48 360,4 540,26 C720,48 900,4 1080,26 C1260,48 1350,10 1440,26 L1440,56 L0,56 Z" fill="#ffffff"/>
+  </svg>
+
+  <div class="max-w-7xl mx-auto px-5 md:px-8 pt-24 pb-20 md:pt-28 md:pb-24">
+    <div class="max-w-2xl">
+      <h2 class="font-display font-bold text-white text-[30px] md:text-[36px] leading-tight">Serviços de climatização e refrigeração, num só lugar</h2>
+      <p class="mt-4 text-[16px] text-[#C7D9E6] leading-relaxed">Não separamos "quem cuida do frio quente" de "quem cuida do frio gelado". A mesma equipe atende o seu ar-condicionado e os seus eletrodomésticos de refrigeração.</p>
+    </div>
+
+    <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div class="bg-white/[0.06] border border-white/10 rounded-xl p-7 hover:bg-white/[0.09] transition-colors">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#4FC0E8" stroke-width="1.6" class="mb-5"><rect x="3" y="6" width="18" height="9" rx="1.5"/><path d="M7 18h10M9 21h6" stroke-linecap="round"/></svg>
+        <h3 class="font-display font-bold text-white text-[17px]">Instalação de ar-condicionado</h3>
+        <p class="mt-2 text-[14px] text-[#B9CCDB] leading-relaxed">Projeto pensado para o seu espaço, com padrão técnico que evita retrabalho e protege a garantia do equipamento.</p>
+      </div>
+
+      <div class="bg-white/[0.06] border border-white/10 rounded-xl p-7 hover:bg-white/[0.09] transition-colors">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#4FC0E8" stroke-width="1.6" class="mb-5"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" stroke-linecap="round"/><circle cx="12" cy="12" r="4"/></svg>
+        <h3 class="font-display font-bold text-white text-[17px]">Manutenção preventiva e corretiva</h3>
+        <p class="mt-2 text-[14px] text-[#B9CCDB] leading-relaxed">Revisões programadas para casas, comércios e indústrias, e atendimento corretivo quando o problema já apareceu.</p>
+      </div>
+
+      <div class="bg-white/[0.06] border border-white/10 rounded-xl p-7 hover:bg-white/[0.09] transition-colors">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#4FC0E8" stroke-width="1.6" class="mb-5"><path d="M12 3c2 3 6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 4-8 6-11z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <h3 class="font-display font-bold text-white text-[17px]">Higienização técnica</h3>
+        <p class="mt-2 text-[14px] text-[#B9CCDB] leading-relaxed">Limpeza que remove o que se acumula por dentro do sistema e devolve ar limpo para o ambiente.</p>
+      </div>
+
+      <div class="bg-white/[0.06] border border-white/10 rounded-xl p-7 hover:bg-white/[0.09] transition-colors">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#4FC0E8" stroke-width="1.6" class="mb-5"><path d="M6 3h12l1 5H5l1-5z" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 8v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8" /><path d="M9 14a3 3 0 0 0 6 0" stroke-linecap="round"/></svg>
+        <h3 class="font-display font-bold text-white text-[17px]">Manutenção de geladeiras e freezers</h3>
+        <p class="mt-2 text-[14px] text-[#B9CCDB] leading-relaxed">Do vazamento no condensador à troca de serpentina, para residências, comércios e câmaras frias.</p>
+      </div>
+
+      <div class="bg-white/[0.06] border border-white/10 rounded-xl p-7 hover:bg-white/[0.09] transition-colors">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#4FC0E8" stroke-width="1.6" class="mb-5"><rect x="4" y="2" width="16" height="20" rx="2"/><circle cx="12" cy="13" r="4.5"/><path d="M8 5.5h.01M11 5.5h.01" stroke-linecap="round"/></svg>
+        <h3 class="font-display font-bold text-white text-[17px]">Manutenção de máquinas de lavar</h3>
+        <p class="mt-2 text-[14px] text-[#B9CCDB] leading-relaxed">Diagnóstico de ruído, vazamento e falha de centrifugação, com conserto de verdade, não só o remendo.</p>
+      </div>
+
+      <div class="bg-white/[0.06] border border-white/10 rounded-xl p-7 hover:bg-white/[0.09] transition-colors">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#4FC0E8" stroke-width="1.6" class="mb-5"><path d="M3 11l9-7 9 7" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 10v10h14V10" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 20v-6h6v6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <h3 class="font-display font-bold text-white text-[17px]">Climatização comercial e industrial</h3>
+        <p class="mt-2 text-[14px] text-[#B9CCDB] leading-relaxed">Contratos programados para ambientes que não podem parar, com relatório técnico a cada visita.</p>
+      </div>
+    </div>
+
+    <div class="mt-10 pt-8 border-t border-white/10">
+      <p class="text-[12px] uppercase tracking-[0.08em] text-[#7C93A8] mb-4">Equipamentos que atendemos</p>
+      <div class="flex flex-wrap gap-2.5">
+        <span class="text-[13px] text-white/85 bg-white/[0.07] border border-white/10 rounded-full px-4 py-1.5">Split</span>
+        <span class="text-[13px] text-white/85 bg-white/[0.07] border border-white/10 rounded-full px-4 py-1.5">Multi Split</span>
+        <span class="text-[13px] text-white/85 bg-white/[0.07] border border-white/10 rounded-full px-4 py-1.5">Janela</span>
+        <span class="text-[13px] text-white/85 bg-white/[0.07] border border-white/10 rounded-full px-4 py-1.5">Geladeira</span>
+        <span class="text-[13px] text-white/85 bg-white/[0.07] border border-white/10 rounded-full px-4 py-1.5">Freezer</span>
+        <span class="text-[13px] text-white/85 bg-white/[0.07] border border-white/10 rounded-full px-4 py-1.5">Máquina de lavar</span>
+        <span class="text-[13px] text-white/85 bg-white/[0.07] border border-white/10 rounded-full px-4 py-1.5">Câmara fria</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIA -->
+<section class="bg-white">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-24">
+    <h2 class="font-display font-bold text-navy text-[28px] md:text-[32px] leading-tight">Serviço registrado, do início ao fim</h2>
+    <p class="mt-3 text-[15px] text-ink/65 max-w-xl">Alguns dos atendimentos recentes da equipe em campo.</p>
+    <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <!-- ===== TODO-IMG: foto de instalação de unidade externa ===== -->
+      <img src="imagens/externo.webp" alt="Instalação de unidade externa de ar-condicionado" class="rounded-xl aspect-[4/3] w-full object-cover">
+      <!-- ===== TODO-IMG: foto de higienização de split comercial ===== -->
+      <img src="imagens/manutenção.webp" alt="Manutenção ou higienização de split comercial" class="rounded-xl aspect-[4/3] w-full object-cover">
+      <!-- ===== TODO-IMG: foto de manutenção de geladeira/freezer/máquina de lavar ===== -->
+      <img src="imagens/maquina-de-lavar.webp" alt="Manutenção de geladeira, freezer ou máquina de lavar" class="rounded-xl aspect-[4/3] w-full object-cover">
+    </div>
+  </div>
+</section>
+
+<!-- AVALIAÇÕES -->
+<section id="avaliacoes" class="bg-ice-100">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-24">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+      <div class="max-w-xl">
+        <h2 class="font-display font-bold text-navy text-[30px] md:text-[36px] leading-tight">Quem já chamou, recomenda</h2>
+        <p class="mt-4 text-[16px] text-ink/70 leading-relaxed">A Refrizer atua na instalação de ar-condicionado e na manutenção de geladeiras, máquinas de lavar e sistemas de climatização para residências, comércios e indústrias de Guarapuava, com nota máxima no Google.</p>
+      </div>
+      <div class="bg-white rounded-xl px-6 py-5 shrink-0 border border-navy/10">
+        <div class="flex items-center gap-2">
+          <span class="font-display font-bold text-navy text-[30px]">5,0</span>
+          <span class="flex items-center gap-0.5 text-ice">
+            <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.6 6.1.6-4.6 4.1 1.3 6-5.4-3.1-5.4 3.1 1.3-6-4.6-4.1 6.1-.6z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.6 6.1.6-4.6 4.1 1.3 6-5.4-3.1-5.4 3.1 1.3-6-4.6-4.1 6.1-.6z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.6 6.1.6-4.6 4.1 1.3 6-5.4-3.1-5.4 3.1 1.3-6-4.6-4.1 6.1-.6z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.6 6.1.6-4.6 4.1 1.3 6-5.4-3.1-5.4 3.1 1.3-6-4.6-4.1 6.1-.6z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.6 6.1.6-4.6 4.1 1.3 6-5.4-3.1-5.4 3.1 1.3-6-4.6-4.1 6.1-.6z"/></svg>
+          </span>
+        </div>
+        <p class="text-[13px] text-ink/60 mt-1">Avaliação verificada no Google</p>
+        <a href="https://www.google.com/search?q=refrizer+guarapuava&oq=refrizer+&gs_lcrp=EgZjaHJvbWUqBggAECMYJzIGCAAQIxgnMgYIARBFGDkyCAgCEEUYJxg7MgYIAxBFGDsyBwgEEAAYgAQyBggFEEUYPDIGCAYQRRg9MgYIBxBFGDzSAQgxNTE0ajBqN6gCALACAA&sourceid=chrome&source=chrome.ob&ie=UTF-8"
+           target="_blank" rel="noopener" class="mt-2 inline-flex items-center gap-1 text-ice text-[13px] font-semibold hover:underline">
+          Ver todas as avaliações
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="mt-12 grid md:grid-cols-3 gap-5">
+      <div class="bg-white rounded-xl p-6 border border-navy/10">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1FA9DD" stroke-width="1.6" class="mb-4"><path d="M12 3c2 3 6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 4-8 6-11z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <p class="text-[14px] text-ink/80 leading-relaxed">Split limpo por fora é fácil de ver. Por dentro, é outra história. Aqui você confere o que a higienização profunda realmente remove.</p>
+      </div>
+      <div class="bg-white rounded-xl p-6 border border-navy/10">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1FA9DD" stroke-width="1.6" class="mb-4"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <p class="text-[14px] text-ink/80 leading-relaxed">Vazamento no condensador? A solução costuma ser a troca da serpentina. A gente identifica e já resolve.</p>
+      </div>
+      <div class="bg-white rounded-xl p-6 border border-navy/10">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1FA9DD" stroke-width="1.6" class="mb-4"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <p class="text-[14px] text-ink/80 leading-relaxed">O ar-condicionado sempre dá problema no dia mais quente. A manutenção preventiva existe para isso não acontecer.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="bg-navy-deep">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-16 md:py-20 flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+    <h2 class="font-display font-bold text-white text-[26px] md:text-[32px] leading-tight max-w-xl">Pronto para parar de se preocupar com o clima da sua casa ou da sua empresa?</h2>
+    <a href="https://wa.me/5542988281258?text=Ol%C3%A1%21%20Quero%20agendar%20uma%20visita%20t%C3%A9cnica%20com%20a%20Refrizer."
+       target="_blank" rel="noopener"
+       class="inline-flex items-center justify-center gap-2 bg-ice hover:bg-ice-400 text-white font-semibold text-[15px] px-8 py-4 rounded-full transition-all hover:scale-[1.02] shrink-0">
+      Falar com a Refrizer agora
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="contato" class="bg-navy-deep border-t border-white/10">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 pt-16 pb-10 grid md:grid-cols-[1.1fr_1fr_1fr_1fr] gap-10">
+    <div class="text-center">
+      <img src="imagens/logo.webp" alt="Refrizer Climatização e Refrigeração" class="h-32 mx-auto">
+      <p class="mt-4 text-[14px] text-[#9DB3C4] leading-relaxed max-w-[260px] mx-auto">Climatização e refrigeração para residências, comércios e indústrias de Guarapuava e região.</p>
+      <div class="flex items-center justify-center gap-3 mt-5">
+        <a href="https://www.instagram.com/refrizer_ofc/" target="_blank" rel="noopener" aria-label="Instagram da Refrizer" class="w-9 h-9 rounded-full border border-white/15 flex items-center justify-center text-white/80 hover:text-white hover:border-white/40 transition-colors">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg>
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=61593997273238" target="_blank" rel="noopener" aria-label="Facebook da Refrizer" class="w-9 h-9 rounded-full border border-white/15 flex items-center justify-center text-white/80 hover:text-white hover:border-white/40 transition-colors">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 9h3V5h-3a4 4 0 0 0-4 4v2H7v4h3v6h4v-6h3l1-4h-4V9a1 1 0 0 1 1-1z" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div>
+      <p class="text-[12px] uppercase tracking-[0.08em] text-[#6C86A0] mb-4">Contato</p>
+      <address class="not-italic space-y-3 text-[14px] text-[#C7D9E6]">
+        <p class="flex gap-2.5"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#1FA9DD" stroke-width="1.6" class="shrink-0 mt-0.5"><path d="M12 21s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.3"/></svg>
+          <a href="https://www.google.com/search?sca_esv=3e5594fd685e5dfa&sxsrf=APpeQntXt-uKGMmnZlG3-C1dIA4ZxSXfVg:1790015679628&q=refrizer+climatiza%C3%A7%C3%A3o+e+refrigera%C3%A7%C3%A3o+guarapuava+endere%C3%A7o&ludocid=13379927130394747837&sa=X&sqi=2&ved=2ahUKEwivy-eFqICXAxXipZUCHTBOGD4Q6BN6BAg5EAI" target="_blank" rel="noopener" class="hover:text-white transition-colors">R. Luís Ciscato, 58, Santa Cruz, Guarapuava - PR, 85015-070</a>
+        </p>
+        <p class="flex gap-2.5"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#1FA9DD" stroke-width="1.6" class="shrink-0 mt-0.5"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .6 2.9a2 2 0 0 1-.4 2.1L8.1 9.9a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.4c.9.3 1.9.5 2.9.6a2 2 0 0 1 1.7 2z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <a href="https://wa.me/5542988281258" target="_blank" rel="noopener" class="hover:text-white transition-colors">(42) 98828-1258</a>
+        </p>
+        <p class="flex gap-2.5"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#1FA9DD" stroke-width="1.6" class="shrink-0 mt-0.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Aberto agora · fecha às 18h
+        </p>
+        <p class="flex gap-2.5"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#1FA9DD" stroke-width="1.6" class="shrink-0 mt-0.5"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M12 8v8" stroke-linecap="round"/></svg>
+          <a href="https://refrizerguarapuava.com.br/" target="_blank" rel="noopener" class="hover:text-white transition-colors">refrizerguarapuava.com.br</a>
+        </p>
+      </address>
+    </div>
+
+    <div>
+      <p class="text-[12px] uppercase tracking-[0.08em] text-[#6C86A0] mb-4">Estrutura</p>
+      <ul class="space-y-3 text-[14px] text-[#C7D9E6]">
+        <li class="flex gap-2.5"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#1FA9DD" stroke-width="1.6" class="shrink-0 mt-0.5"><circle cx="12" cy="8" r="3.2"/><path d="M5 21c0-3.9 3.1-7 7-7s7 3.1 7 7" stroke-linecap="round"/></svg>Equipe técnica qualificada</li>
+        <li class="flex gap-2.5"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#1FA9DD" stroke-width="1.6" class="shrink-0 mt-0.5"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.5 2.5L16 9.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Atendimento ágil e higienização profunda</li>
+        <li class="flex gap-2.5"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#1FA9DD" stroke-width="1.6" class="shrink-0 mt-0.5"><path d="M12 3c2 3 6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 4-8 6-11z" stroke-linecap="round" stroke-linejoin="round"/></svg>Climatização e refrigeração, num só time</li>
+      </ul>
+    </div>
+
+    <div>
+      <p class="text-[12px] uppercase tracking-[0.08em] text-[#6C86A0] mb-4">Navegação</p>
+      <ul class="space-y-3 text-[14px] text-[#C7D9E6]">
+        <li><a href="#inicio" class="hover:text-white transition-colors">Início</a></li>
+        <li><a href="#servicos" class="hover:text-white transition-colors">Serviços</a></li>
+        <li><a href="#diferenciais" class="hover:text-white transition-colors">Diferenciais</a></li>
+        <li><a href="#avaliacoes" class="hover:text-white transition-colors">Avaliações</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-5 md:px-8 py-6 text-center">
+      <p class="text-[12px] text-[#6C86A0]">© 2026 Refrizer Climatização e Refrigeração LTDA. CNPJ 31.462.371/0001-19. Guarapuava e região, PR. Todos os direitos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLUTUANTE -->
+<a href="https://wa.me/5542988281258?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Refrizer%20e%20queria%20um%20or%C3%A7amento."
+   target="_blank" rel="noopener" aria-label="Falar no WhatsApp com a Refrizer"
+   class="pulse fixed z-50 bg-ice hover:bg-ice-400 text-white rounded-full w-14 h-14 flex items-center justify-center shadow-xl transition-colors"
+   style="right: max(20px, env(safe-area-inset-right, 0px)); bottom: max(20px, env(safe-area-inset-bottom, 0px));">
+  <svg width="27" height="27" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.8 14.1c-.24.68-1.4 1.3-1.94 1.38-.5.08-1.12.11-1.81-.12-.42-.13-.95-.31-1.64-.6-2.88-1.24-4.76-4.14-4.9-4.33-.14-.19-1.17-1.56-1.17-2.97 0-1.41.74-2.1 1-2.39.26-.28.57-.35.76-.35.19 0 .38 0 .55.01.17.01.42-.07.65.5.24.58.82 2 .89 2.15.07.15.12.32.02.51-.09.19-.14.31-.28.48-.14.17-.3.37-.42.5-.14.14-.29.3-.13.58.17.28.74 1.22 1.58 1.98 1.09.97 2 1.28 2.29 1.42.29.14.46.12.63-.07.17-.19.72-.84.91-1.13.19-.29.38-.24.63-.14.26.09 1.65.78 1.93.92.28.14.47.21.53.33.07.12.07.66-.17 1.34z"/></svg>
+</a>
+
+<script>
+  // Navbar: fica sólida ao rolar
+  const nav = document.getElementById('nav');
+  const navInner = document.getElementById('navInner');
+  const navLinkIds = ['navA1','navA2','navA3','navA4','navA5'];
+
+  function onScroll(){
+    if(window.scrollY > 40){
+      nav.style.background = 'rgba(7,27,48,0.92)';
+      nav.style.backdropFilter = 'blur(10px)';
+      nav.style.boxShadow = '0 1px 0 rgba(255,255,255,0.08)';
+    } else {
+      nav.style.background = 'transparent';
+      nav.style.backdropFilter = 'none';
+      nav.style.boxShadow = 'none';
+    }
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // Menu mobile
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  menuBtn.addEventListener('click', () => {
+    const isHidden = mobileMenu.classList.contains('hidden');
+    mobileMenu.classList.toggle('hidden');
+    menuBtn.setAttribute('aria-expanded', String(isHidden));
+  });
+  document.querySelectorAll('.mobile-link').forEach(a => {
+    a.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+  });
+</script>
+</body>
+</html>
